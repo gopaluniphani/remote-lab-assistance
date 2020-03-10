@@ -34,11 +34,7 @@ class LabCycles extends Component {
                       <td>{labcyle.name}</td>
                       <td>{labcyle.description}</td>
                       <td>
-                        <Link
-                          to="/labcycle"
-                          target="_blank"
-                          className="btn btn-primary"
-                        >
+                        <Link to="/labcycle" className="btn btn-primary btn-sm">
                           Try It Now
                         </Link>
                       </td>

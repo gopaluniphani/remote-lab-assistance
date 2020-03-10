@@ -1,7 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Modal, Button } from "react-bootstrap";
+
+import CKEditor from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 class LabCycles extends Component {
   static propTypes = {
@@ -18,24 +21,22 @@ class LabCycles extends Component {
         </Modal.Header>
         <Modal.Body>
           <div className="container">
-            <table className="table table-striped">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.props.labcycles.map(labcyle => {
-                  return (
-                    <tr key={labcyle.id}>
-                      <td>{labcyle.name}</td>
-                      <td>{labcyle.description}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+            {this.props.labcycles.map(labcycle => {
+              return (
+                <Fragment key={labcycle.id}>
+                  <h5>{labcycle.name}</h5>
+                  <CKEditor
+                    editor={ClassicEditor}
+                    config={{
+                      toolbar: []
+                    }}
+                    data={labcycle.description}
+                    disabled={true}
+                  />
+                  <hr />
+                </Fragment>
+              );
+            })}
           </div>
         </Modal.Body>
         <Modal.Footer>

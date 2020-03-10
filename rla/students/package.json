@@ -20,6 +20,8 @@
     "webpack-cli": "^3.2.1"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^17.0.0",
+    "@ckeditor/ckeditor5-react": "^2.1.0",
     "ace-builds": "^1.4.8",
     "axios": "^0.18.0",
     "bootstrap": "^4.4.1",

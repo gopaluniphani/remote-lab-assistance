@@ -21,6 +21,10 @@ export const ADD_LAB = "ADD_LAB";
 export const CREATE_LAB = "CREATE_LAB";
 export const CLEAR_CREATED_LAB = "CLEAR_CREATED_LAB";
 
+export const CREATE_LABCYCLE = "CREATE_LABCYCLE";
+export const GET_CR_LABCYCLES = "GET_CR_LABCYCLES";
+export const CLEAR_CR_LABCYCLES = "CLEAR_CR_LABCYCLES";
+
 export const GET_STUDENTS = "GET_STUDENTS";
 export const CLEAR_STUDENTS = "CLEAR_STUDENTS";
 

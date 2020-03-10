@@ -5,7 +5,6 @@ import { tokenConfig } from "./auth";
 import { INSTRUCTOR_LOADED, AUTH_ERROR, UPDATE_PROFILE } from "./types";
 
 export const loadInstructor = () => (dispatch, getState) => {
-  console.log("loading instructor");
   axios
     .get("http://localhost:8000/api/instructors", tokenConfig(getState))
     .then(res => {

@@ -8,7 +8,6 @@ export const getStudents = student_links => (dispatch, getState) => {
     .all(student_links.map(link => axios.get(link, tokenConfig(getState))))
     .then(res => res.map(r => r.data))
     .then(data => {
-      console.log(data);
       dispatch({
         type: GET_STUDENTS,
         payload: data

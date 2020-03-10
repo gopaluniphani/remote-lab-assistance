@@ -1,0 +1,29 @@
+export const GET_ERRORS = "GET_ERRORS";
+export const CREATE_MESSAGE = "CREATE_MESSAGE";
+export const USER_LOADING = "USER_LOADING";
+export const USER_LOADED = "USER_LOADED";
+export const AUTH_ERROR = "AUTH_ERROR";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAIL = "LOGIN_FAIL";
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const REGISTER_FAIL = "REGISTER_FAIL";
+
+export const GET_LABS = "GET_LABS";
+export const CLEAR_LABS = "CLEAR_LABS";
+
+export const GET_LABCYCLES = "GET_LABCYCLES";
+export const CLEAR_LABCYCLES = "CLEAR_LABCYCLES";
+
+export const GET_AVAILABLE_LABS = "GET_AVAILABLE_LABS";
+export const ADD_LAB = "ADD_LAB";
+
+export const CREATE_LAB = "CREATE_LAB";
+export const CLEAR_CREATED_LAB = "CLEAR_CREATED_LAB";
+
+export const GET_STUDENTS = "GET_STUDENTS";
+export const CLEAR_STUDENTS = "CLEAR_STUDENTS";
+
+export const INSTRUCTOR_LOADED = "INSTRUCTOR_LOADED";
+export const CLEAR_INSTRUCTOR = "CLEAR_INSTRUCTOR";
+export const UPDATE_PROFILE = "UPDATE_PROFILE";

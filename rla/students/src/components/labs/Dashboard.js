@@ -19,4 +19,10 @@ class Dashboard extends Component {
   }
 }
 
+/*const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated
+  };
+};*/
+
 export default connect(null, { loadStudent })(Dashboard);

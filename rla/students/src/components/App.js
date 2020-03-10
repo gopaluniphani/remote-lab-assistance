@@ -43,8 +43,8 @@ class App extends Component {
                 <PrivateRoute exact path="/" component={Dashboard} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
-                <Route path="/profile" component={Profile} />
-                <Route path="/labcycle" component={Labcycle} />
+                <PrivateRoute path="/profile" component={Profile} />
+                <PrivateRoute path="/labcycle" component={Labcycle} />
               </Switch>
             </Fragment>
           </Router>

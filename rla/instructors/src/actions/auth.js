@@ -82,7 +82,12 @@ export const register = ({ username, password, email }) => dispatch => {
   };
 
   // Request Body
-  const body = JSON.stringify({ username, email, password });
+  const body = JSON.stringify({
+    username: username,
+    email: email,
+    password: password,
+    is_staff: true
+  });
 
   axios
     .post("/api/register", body, config)

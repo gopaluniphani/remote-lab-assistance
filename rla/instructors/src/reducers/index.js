@@ -10,6 +10,7 @@ import availablelabs from "./availablelabs";
 import createlab from "./createlab";
 import addlab from "./addlab";
 import crlabcycles from "./crlabcycles";
+import addstudents from "./addstudents";
 
 export default combineReducers({
   labs,
@@ -22,5 +23,6 @@ export default combineReducers({
   availablelabs,
   createlab,
   addlab,
-  crlabcycles
+  crlabcycles,
+  addstudents
 });

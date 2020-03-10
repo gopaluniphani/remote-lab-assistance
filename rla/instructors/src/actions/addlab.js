@@ -20,7 +20,8 @@ export const addLab = (instructor_id, lab_id) => dispatch => {
     )
     .then(res => {
       dispatch({
-        type: ADD_LAB
+        type: ADD_LAB,
+        payload: res.data.id
       });
     })
     .catch(err => {

@@ -25,6 +25,7 @@ export class Alerts extends Component {
       if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
       if (message.profileUpdated) alert.success(message.profileUpdated);
       if (message.labCreated) alert.success(message.labCreated);
+      if (message.studentUpdated) alert.success(message.studentUpdated);
     }
   }
 

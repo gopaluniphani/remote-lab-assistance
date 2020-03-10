@@ -5,8 +5,10 @@ import PropTypes from "prop-types";
 import { loadAvailableLabs } from "../../actions/availablelabs";
 import { addLab } from "../../actions/addlab";
 import { getLabs } from "../../actions/labs";
+import { clearAddedStudents } from "../../actions/addstudents";
 
 import CreateLab from "./CreateLab";
+import AddStudents from "./AddStudents";
 
 class AddLab extends Component {
   static propTypes = {
@@ -30,11 +32,22 @@ class AddLab extends Component {
   }
 
   state = {
-    showModal: false
+    showModal: false,
+    showStudentModal: false
   };
 
   setModalShow = show => {
     this.setState({ showModal: show });
+  };
+
+  setStudentModalShow = show => {
+    this.setState({ showStudentModal: show });
+  };
+
+  closeStudentModal = () => {
+    this.setStudentModalShow(false);
+    this.setState({ lab_id: 0 });
+    this.props.clearAddedStudents();
   };
 
   createLab = e => {
@@ -44,6 +57,7 @@ class AddLab extends Component {
 
   addLab = e => {
     this.props.addLab(this.props.instructor_id, e.target.id);
+    this.setStudentModalShow(true);
   };
 
   render() {
@@ -95,6 +109,12 @@ class AddLab extends Component {
           show={this.state.showModal}
           onHide={() => this.setModalShow(false)}
         />
+
+        <AddStudents
+          lab_id={this.props.lab_id}
+          show={this.state.showStudentModal}
+          onHide={() => this.closeStudentModal()}
+        />
       </Fragment>
     );
   }
@@ -106,10 +126,14 @@ const mapStateToProps = state => {
     labs: state.availablelabs.labs,
     lab_created: state.createlab.labCreated,
     instructor_id: state.instructor.id,
-    lab_added: state.addlab.lab_added
+    lab_added: state.addlab.lab_added,
+    lab_id: state.addlab.lab_id
   };
 };
 
-export default connect(mapStateToProps, { loadAvailableLabs, addLab, getLabs })(
-  AddLab
-);
+export default connect(mapStateToProps, {
+  loadAvailableLabs,
+  addLab,
+  getLabs,
+  clearAddedStudents
+})(AddLab);

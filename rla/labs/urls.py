@@ -11,6 +11,7 @@ router.register('api/activelabcycles', ActiveLabCycleViewSet)
 
 urlpatterns = [
     path('', views.index),
-    path('addlabs/', views.addlab)
+    path('addlabs/', views.addlab),
+    path('addstudents/', views.addstudents)
 ]
 urlpatterns += router.urls
